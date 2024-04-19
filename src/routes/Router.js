@@ -23,24 +23,27 @@ const Router = [
     element: <FullLayout />,
     children: [
       { path: '/', element: <Navigate to="/all-posts" /> },
-      { path: '/all-posts', exact: true, element: <AllPosts /> },
+      { path: '/all-posts', element: <AllPosts /> },
+      { path: '/add-post', element: <Dashboard /> },
+
       //{ path: '/sample-page', exact: true, element: <SamplePage /> },
       //{ path: '/icons', exact: true, element: <Icons /> },
       //{ path: '/ui/typography', exact: true, element: <TypographyPage /> },
       //{ path: '/ui/shadow', exact: true, element: <Shadow /> },
-      { path: '*', element: <Navigate to="/auth/404" /> },
+      // { path: '*', element: <Navigate to="/auth/404" /> },
     ],
   },
-  {
-    path: '/auth',
-    element: <BlankLayout />,
-    children: [
-      { path: '404', element: <Error /> },
-      { path: '/auth/register', element: <Register /> },
-      { path: '/auth/login', element: <Login /> },
-      { path: '*', element: <Navigate to="/auth/404" /> },
-    ],
-  },
+
+  // {
+  //   path: '/auth',
+  //   element: <BlankLayout />,
+  //   children: [
+  //     { path: '404', element: <Error /> },
+  //     { path: '/auth/register', element: <Register /> },
+  //     { path: '/auth/login', element: <Login /> },
+  //     { path: '*', element: <Navigate to="/auth/404" /> },
+  //   ],
+  // },
 ];
 
 export default Router;

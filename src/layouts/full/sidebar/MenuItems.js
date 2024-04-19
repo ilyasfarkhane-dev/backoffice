@@ -75,15 +75,15 @@ const Menuitems = [
   // },
   {
     id: uniqueId(),
-    title: 'See All Posts',
-    icon: IconEye, // You can choose an appropriate icon
-    href: '/posts',
+    title: 'All Posts',
+    icon: IconEye,
+    href: '/all-posts',
   },
   {
     id: uniqueId(),
     title: 'Add Post',
-    icon: IconCirclePlus, // You can choose an appropriate icon
-    href: '/posts/add',
+    icon: IconCirclePlus,
+    href: '/add-post',
   },
 ];
 

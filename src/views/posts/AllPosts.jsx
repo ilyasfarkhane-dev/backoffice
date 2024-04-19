@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 const BlogTable = () => {
   // Define static blog data
   const blogs = [
@@ -35,6 +36,25 @@ const BlogTable = () => {
   const handleHideUpdateForm = () => {
     setUpdateFormVisible(false);
     setCurrentBlog(null);
+  };
+  const handleDelete = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Deleted!',
+          text: 'Your file has been deleted.',
+          icon: 'success',
+        });
+      }
+    });
   };
 
   // Event handler for input changes in the form
@@ -120,6 +140,7 @@ const BlogTable = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     className="icon icon-tabler icons-tabler-outline icon-tabler-trash cursor-pointer"
+                    onClick={handleDelete}
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M4 7l16 0" />

@@ -75,13 +75,13 @@ const Menuitems = [
   // },
   {
     id: uniqueId(),
-    title: 'All Posts',
+    title: 'Tout les Blogs',
     icon: IconEye,
     href: '/all-posts',
   },
   {
     id: uniqueId(),
-    title: 'Add Post',
+    title: 'Ajouter Blog',
     icon: IconCirclePlus,
     href: '/add-post',
   },

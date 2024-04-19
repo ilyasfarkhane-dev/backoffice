@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 const AddPostForm = () => {
   // Define state to handle form inputs
@@ -29,21 +30,23 @@ const AddPostForm = () => {
     e.preventDefault();
     // Add form submission logic here (e.g., send formData to the server)
     console.log('Form submitted:', formData);
+
+    toast.success('Blog post updated successfully!');
   };
 
   return (
     <div className="container mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6">Add New Post</h2>
+      <h2 className="text-2xl font-bold mb-6">Ajouter un nouveau blog</h2>
 
       <form onSubmit={handleSubmit}>
         {/* First Section: Post Details */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">Post Details</h3>
+          <h3 className="text-xl font-semibold mb-4">Détails du message</h3>
 
           {/* Title */}
           <div className="mb-4">
             <label htmlFor="title" className="block text-gray-700 font-medium mb-2">
-              Title:
+              Titre:
             </label>
             <input
               type="text"
@@ -52,7 +55,7 @@ const AddPostForm = () => {
               value={formData.title}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter title"
+              placeholder="Entrez  le  titre"
               required
             />
           </div>
@@ -68,7 +71,7 @@ const AddPostForm = () => {
               value={formData.text}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter text"
+              placeholder="Entrez  le  text"
               required
             ></textarea>
           </div>
@@ -76,16 +79,14 @@ const AddPostForm = () => {
           {/* Image */}
           <div className="mb-4">
             <label htmlFor="image" className="block text-gray-700 font-medium mb-2">
-              Image URL:
+              Image :
             </label>
             <input
-              type="text"
-              id="image"
-              name="image"
-              value={formData.image}
+              type="file"
+              id="fileUpload"
+              name="fileUpload"
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter image URL"
               required
             />
           </div>
@@ -93,7 +94,7 @@ const AddPostForm = () => {
           {/* Author */}
           <div className="mb-4">
             <label htmlFor="author" className="block text-gray-700 font-medium mb-2">
-              Author:
+              Auteur:
             </label>
             <input
               type="text"
@@ -102,7 +103,7 @@ const AddPostForm = () => {
               value={formData.author}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter author name"
+              placeholder="Entrez  le  nom  d'auteur"
               required
             />
           </div>
@@ -110,7 +111,7 @@ const AddPostForm = () => {
 
         {/* Second Section: SEO and Keywords */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">SEO and Keywords</h3>
+          <h3 className="text-xl font-semibold mb-4">SEO et mots clés</h3>
 
           {/* Description */}
           <div className="mb-4">
@@ -123,7 +124,7 @@ const AddPostForm = () => {
               value={formData.description}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter description"
+              placeholder="Entrez  la  description"
               required
             ></textarea>
           </div>
@@ -131,7 +132,7 @@ const AddPostForm = () => {
           {/* Keywords */}
           <div className="mb-4">
             <label htmlFor="keywords" className="block text-gray-700 font-medium mb-2">
-              Keywords:
+              Mots clés:
             </label>
             {/* Create an array of keywords input fields */}
             {Array.from({ length: 6 }, (_, index) => (
@@ -142,7 +143,8 @@ const AddPostForm = () => {
                 value={formData[`keyword${index + 1}`]}
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-lg mb-2"
-                placeholder={`Keyword ${index + 1}`}
+                placeholder={`
+Mots  clés  ${index + 1}`}
                 required
               />
             ))}
@@ -151,7 +153,7 @@ const AddPostForm = () => {
           {/* Metatitle */}
           <div className="mb-4">
             <label htmlFor="Metatitle" className="block text-gray-700 font-medium mb-2">
-              Metatitle:
+              Méta-titre:
             </label>
             <input
               type="text"
@@ -160,7 +162,7 @@ const AddPostForm = () => {
               value={formData.Metatitle}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter Metatitle"
+              placeholder="Entrez  Méta-titre"
               required
             />
           </div>
@@ -168,7 +170,7 @@ const AddPostForm = () => {
           {/* Alt */}
           <div className="mb-4">
             <label htmlFor="alt" className="block text-gray-700 font-medium mb-2">
-              Alt Text:
+              Text du Alt:
             </label>
             <input
               type="text"
@@ -177,7 +179,7 @@ const AddPostForm = () => {
               value={formData.alt}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
-              placeholder="Enter alt text"
+              placeholder="Entrez  le  text  du  alt"
               required
             />
           </div>
@@ -186,7 +188,7 @@ const AddPostForm = () => {
         {/* Submit Button */}
         <div className="flex justify-end">
           <button type="submit" className="bg-[#ff8000] text-white px-4 py-2 rounded-lg transition">
-            Add Post
+            Ajouter
           </button>
         </div>
       </form>

@@ -31,7 +31,7 @@ const AddPostForm = () => {
     // Add form submission logic here (e.g., send formData to the server)
     console.log('Form submitted:', formData);
 
-    toast.success('Blog post updated successfully!');
+    toast.success('Blog créé avec succès !');
   };
 
   return (

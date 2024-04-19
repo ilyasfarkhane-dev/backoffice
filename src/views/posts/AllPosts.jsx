@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { toast } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 const BlogTable = () => {
   // Define static blog data
   const blogs = [
@@ -59,7 +59,7 @@ const BlogTable = () => {
     // (For now, we'll just log the currentBlog state to the console)
     console.log('Updated Blog:', currentBlog);
 
-    toast.success('Blog post updated successfully!');
+    toast.success('Blog mis à jour avec succès !');
 
     // Hide the update form
     handleHideUpdateForm();

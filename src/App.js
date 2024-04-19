@@ -10,10 +10,6 @@ function App() {
   const theme = baselightTheme;
   return (
     <ThemeProvider theme={theme}>
-      <Toaster
-        position="top-right" // Options: 'top-right', 'top-left', 'bottom-right', 'bottom-left', 'top-center', 'bottom-center'
-        duration={4000} // Duration in milliseconds
-      />
       <CssBaseline />
       {routing}
     </ThemeProvider>

@@ -9,6 +9,7 @@ const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')))
 /* ****Pages***** */
 const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard')));
 const AllPosts = Loadable(lazy(() => import('../views/posts/AllPosts')));
+const AddPost = Loadable(lazy(() => import('../views/posts/AddPost')));
 const SamplePage = Loadable(lazy(() => import('../views/sample-page/SamplePage')));
 const Icons = Loadable(lazy(() => import('../views/icons/Icons')));
 const TypographyPage = Loadable(lazy(() => import('../views/utilities/TypographyPage')));
@@ -24,7 +25,7 @@ const Router = [
     children: [
       { path: '/', element: <Navigate to="/all-posts" /> },
       { path: '/all-posts', element: <AllPosts /> },
-      { path: '/add-post', element: <Dashboard /> },
+      { path: '/add-post', element: <AddPost /> },
 
       //{ path: '/sample-page', exact: true, element: <SamplePage /> },
       //{ path: '/icons', exact: true, element: <Icons /> },
